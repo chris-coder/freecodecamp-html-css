@@ -1,0 +1,448 @@
+------------------------------
+--Applied Visual Design--
+------------------------------
+
+1. text-align
+	this can be used to style the alignment of the text in css
+text-align: justify;
+text-align: center; 
+text-align: right;
+text-align: left; 
+
+
+2.	height
+	can be used to set the height of the element
+height:25px;
+
+
+3.	width
+	can be used to set the width of the element
+width:25px;
+
+
+4.	strong / bold
+	this html tag can be used to apply BOLD to the text
+<strong> ABC </strong>
+font-weight: bold; 				/*CSS quivalent*/
+
+
+5. u / underline
+		this html tag can be used to apply UNDERLINE to the text
+<u> ABC </u>
+text-decoration: underline;		/*CSS quivalent*/
+
+
+6.	em / italic(emphasis)
+	this html tag can be used to apply ITALIC to the text
+<em> ABC </em>
+font-weight: italic; 			/*CSS quivalent*/
+
+
+7. s / strikethrough
+		this html tag can be used to apply STRIKETHROUGH to the text
+<s> ABC </s>
+text-decoration: line-through;	/*CSS quivalent*/
+
+
+8. hr / horizontal rule
+	this html tag can be used to apply Horizontal Line , self closing tag(no need to add closing tag)
+
+
+9. background-color: rgba(x,y,z,a)
+rgba stands for:
+  r = red
+  g = green
+  b = blue
+  a = alpha/level of opacity
+background-color: rgba(45, 45, 45, 0.1);
+
+
+10.	box-shadow
+box-shadow property takes values for:
+    offset-x (how far to push the shadow horizontally from the element),
+    offset-y (how far to push the shadow vertically from the element),
+    blur-radius,
+    spread-radius and
+    color, in that order.
+
+The blur-radius and spread-radius values are optional.
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+
+11.	opacity
+	A value of 1 is opaque, which isn't transparent at all.
+	A value of 0.5 is half see-through.
+	A value of 0 is completely transparent.
+opacity:0.7;
+
+
+12.	text-transform
+	none(default), lowercase, uppercase, capitalize, initial, inherit(use from parent class)
+text-transform: uppercase;
+
+
+13. font-size
+14. font-weight
+
+
+15. line-height
+	space between lines
+line-height:25px;
+
+
+16. :hover
+	to change the property of a tag when the pointer hovers over the object 
+	this is a pseudo class selector like :root
+a {									/* here 'a' is the anchor tag, default color is black*/
+    color: black;
+  }
+a:hover {							/* the hover will cause the string to highlight as blue*/
+  color: red;
+}
+
+
+17. position: relative;
+	lets CSS set the element position with respect to the element before or after
+	it is used in conjunction with the 'left, right, top, bottom' offset properties
+p {
+  position: relative;
+  bottom: 10px;
+}
+
+
+18. offset properties
+	right : 10px; 			/*move/offset the element to the left by 10 px*/
+	left : 10px; 			/*move/offset the element to the right by 10 px*/
+	top : 10px; 			/*move/offset the element to the bottom by 10 px*/
+	bottom : 10px; 			/*move/offset the element to the top by 10 px*/
+	
+	
+19.	position: absolute;
+	absolute positioning is that it will be locked relative to its closest positioned ancestor
+	
+	
+20.	position: fixed;
+	a type of absolute positioning that locks an element relative to the browser window
+	One key difference between the fixed and absolute positions is that an element with a fixed position won't move when the user scrolls.
+#navbar {	
+position:fixed;				/*fixes the position at the bottom the screen*/
+bottom:0px;
+right:0px;
+}
+
+
+21. float	
+	sets the float property of an element
+	Floating elements are removed from the normal flow of a document and pushed to either the left or right of their containing parent element.
+	commonly used with the width property to specify how much horizontal space the floated element requires
+#left {
+  float:left;
+  width: 50%;
+}
+
+
+22.	z-index
+	the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the z-index property can specify the order of how elements are stacked on top of one another. 
+.first {
+    background-color: red;
+    position: absolute;
+    z-index:2;
+  }
+.second {
+  background-color: blue;
+  position: absolute;
+  left: 40px;
+  top: 50px;
+  z-index: 1;
+}
+
+
+23.	margin:auto;
+	to center a block element horizontally
+div {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    margin:auto;
+  }
+  
+  
+  
+24.	hsl()
+	Hue, Saturation, Lightness. Another way of coloring. Hue is based on color wheel and not color spectrum
+	This can be used to building contrast between two element colors that are close by..
+hsl(120, 100%, 50%);			/*Hue uses a color wheel, so range is between 0 to 360*/
+
+
+25.	background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...);
+	show elements with color trasitions
+<style>
+  div {
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin: 50px auto;
+background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+  }
+</style>
+<div></div>
+
+
+25.	repeating-linear-gradient()
+	show elements with color trasitions with repeating pattern
+<style>
+  div{
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin:  50 auto;
+    background: repeating-linear-gradient(
+      45deg,
+      yellow 0px,
+      yellow 40px,
+      black 40px,
+      black 80px
+    );
+  }
+</style>
+<div></div>
+
+
+26. background: url();
+	ideally for displaying a texture on the background
+<style>
+body {
+background:url(https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png);
+  }
+</style>
+
+
+27.	transform: scale()
+	to increase/decrease the size of the element, arg is the no. of times, 2 times, 1.5 times, 0.5 times
+transform:scale(1.5);
+
+
+28.	transform: scale() with :hover
+<style>
+  div {
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+    background: blue;
+  }
+  div:hover{
+    transform: scale(1.1);
+  }
+</style>
+<div></div>
+
+
+29.	transform: skewX();
+	transform: skewY();
+	skews the selected element along the X-axis or Y-axis
+<style>
+  div {
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+  }
+  #top {
+    background-color: red;
+	transform: skewY(-10deg);
+  }
+  #bottom {
+    background-color: blue;
+    transform:skewX(24deg);
+  }
+  #default{
+  background-color: green;
+  }
+</style>
+<div id="top"></div>
+<div id="bottom"></div>
+<div id="default"></div>
+
+
+30.	manipulating 'box-shadow'
+<style>
+  .center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 25px 10px 0 0 blue;
+  }
+</style>
+<div class="center"></div>
+
+
+
+31. ::before / ::after
+	These pseudo-elements are used to add something before or after a selected element.
+	these psuedo elements must have a defined 'content' property
+	if making shapes then the content :""; (empty string)
+<style>
+  .heart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);;
+  }
+  .heart::after {
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  .heart::before {
+    content: "" ;
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
+</style>
+<div class="heart"></div>
+
+
+
+
+------------------
+--= ANIMATION =--
+------------------
+
+32.	@keyframes
+	animation-name
+		sets the name of the animation, which is later used by @keyframes to tell CSS which rules go with which animations.
+	animation-duration 
+		sets the length of time for the animation.
+<style>
+  div {
+    height: 40px;
+    width: 70%;
+    background: black;
+    margin: 50px auto;
+    border-radius: 5px;
+  }
+
+  #rect {
+    animation-name:rainbow;
+    animation-duration: 4s;
+  }
+
+@keyframes rainbow{										/*linking the keyframes to the animation name declared*/
+  0%{													/*at 0% of animation, the color is blue*/
+    background-color:blue;
+  }
+  50%{													/*at 50% of animation, the color transitions to green*/
+    background-color: green;
+  }
+  100%{													/*at 100% of animation, the color transitions to blue*/
+    background-color: yellow;
+  }
+}
+</style>
+<div id="rect"></div>
+
+
+33.	:hover with @keyframes
+<style>
+  button {
+    border-radius: 5px;
+    color: white;
+    background-color: #0F5897;
+    padding: 5px 10px 8px 10px;
+  }
+
+  button:hover {
+    animation-name: background-color;
+    animation-duration: 500ms;
+  }
+ @keyframes background-color{
+   100%{
+   background-color:#4791d0;						/*changes the button color when hovered for 500ms and reverts back*/
+   }
+ }
+
+</style>
+<button>Register</button>
+
+
+34. @keyframes
+	animation-fill-mode: forwards;
+	this specifies the style applied to an element when the animation has finished.
+  button:hover {
+    animation-name: background-color;
+    animation-duration: 500ms;
+	animation-fill-mode: forwards;					/*keeps the button highlighted even after the duration ends*/
+  }
+  
+  
+  
+35.	animating elements using CSS offset properties
+@keyframes rainbow {
+    0% {
+      background-color: blue;
+      top: 0px;
+      left: 0px;
+
+    }
+    50% {
+      background-color: green;
+      top: 50px;
+      left: 25px;
+    }
+    100% {
+      background-color: yellow;
+      top: 0px;
+      left: -25px;
+    }
+  }
+  
+  
+36. fading the elements by making changes in the opacity
+@keyframes fade {
+    50% {
+      left: 60%;
+    opacity:0.1;
+    }
+  }  
+  
+  
+37. @keyframes
+	animation-iteration-count
+		allows you to control how many times you would like to loop through the animation (1,2,3,.. infinite)
+animation-iteration-count: infinite;
+animation-iteration-count: 3;
+
+
+38. @keyframes
+	animation-timing-function
+		controls how quickly an animated element changes over the duration of the animation
+animation-timing-function: ease-out;
+animation-timing-function: ease-in;	
+animation-timing-function: ease;	
+animation-timing-function: linear;
+
+animation-timing-function: cubic-bezier(x1, y1, x2, y2);
+	animating using the Bezier curves, (0,0) (1,1)
+	animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);

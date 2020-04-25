@@ -1,0 +1,185 @@
+CSS Grid
+
+
+1.	display:grid;
+
+
+2. 	grid-template-columns
+	To add some columns to the grid
+	number of parameters given to the grid-template-columns property indicates the number of columns in the grid
+grid-template-columns: 10px 10px 10px; 	(3 columns)
+grid-template-columns: 50px 50px;		(2 columns)
+
+
+3.	grid-template-rows
+	To add some rows to the grid
+	number of parameters given to the grid-template-rows property indicates the number of rows in the grid
+grid-template-rows: 10px 10px 10px; 	(3 rows)
+grid-template-rows: 50px 50px;			(2 rows)
+
+
+4. units in css grid
+	px
+	em
+	fr: sets the column or row to a fraction of the available space,
+	auto: sets the column or row to the width or height of its content automatically,
+	%: adjusts the column or row to the percent width of its container.
+	
+	
+5. grid-column-gap
+	creates space between grid columns
+grid-column-gap:10px;
+
+
+6. grid-row-gap
+	creates space between grid row
+grid-column-row:10px;
+
+7. grid-gap: grid-row-gap  grid-column-gap;
+	shorthand version of grid-row-gap  grid-column-gap
+grid-gap: 10px 20px;
+
+
+8. grid-column
+	To control the amount of columns an item will consume, you can use the grid-column property in conjunction with the line numbers you want the item to start and stop at.
+grid-column: 1 / 3;			
+This will make the item start at the first vertical line of the grid on the left and span to the 3rd line of the grid, consuming two columns.
+
+
+9.	grid-row
+	similar to grid-columns but for rows
+
+<style>
+  .item1{background:LightSkyBlue;}
+  .item2{background:LightSalmon;}
+  .item3{background:PaleTurquoise;}
+  .item4{background:LightPink;}
+
+  .item5 {
+    background: PaleGreen;
+    grid-column: 2 / 4;
+	grid-row:2/4;
+  }
+
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+</style>
+
+<div class="container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
+
+
+
+
+
+10.	justify-self
+	align the content's position within its cell HORIZONTALLY
+	stretch: which will make the content fill the whole width of the cell
+	start: aligns the content at the left of the cell,
+	center: aligns the content in the center of the cell,
+	end: aligns the content at the right of the cell.
+justify-self:center;
+
+
+11. align-self
+	align the content's position within its cell VERTICALLY
+	stretch: which will make the content fill the whole width of the cell
+	start: aligns the content at the left of the cell,
+	center: aligns the content in the center of the cell,
+	end: aligns the content at the right of the cell.
+align-self:end;
+
+
+12.	justify-items
+	align them all at once horizontally. use it at the parent container.
+justify-items:stretch;
+
+
+13.	align-items
+	align them all at once vertically. use it at the parent container.
+align-items:start;
+
+
+14.	grid-template-areas
+	group cells of your grid together into an area and give the area a custom name.
+
+grid-template-areas:
+  "header header header"
+  "advert content content"
+  "footer footer footer";
+(Every word in the code represents a cell and every pair of quotation marks represent a row. In addition to custom labels, you can use a period (.) to designate an empty cell in the grid.
+
+
+
+15.	grid-area
+	place an item in your custom area by referencing the name you gave it
+.item1 {
+  grid-area: header;
+}
+(item1 class to go in the area named header)
+
+
+16.	grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
+	If your grid doesn't have an areas template to reference, you can create an area on the fly for an item
+.item1 { 
+grid-area: 1/1/2/4; 
+}
+(item1 will consume the rows between lines 1 and 2, and the columns between lines 1 and 4)
+	
+
+17.	repeat 
+	function to specify the number of times you want your column or row to be repeated, followed by a comma and the value you want to repeat.
+grid-template-rows: repeat(100, 50px);				(create the 100 row grid, each row at 50px tall)
+grid-template-columns: repeat(2, 1fr 50px);			(1fr 50px is repeated twice followed by 20px.)
+	
+
+18. minmax
+	used to limit the size of items when the grid container changes size. To do this you need to specify the acceptable size range for your item.
+grid-template-columns: 100px minmax(50px, 200px);
+(create two columns; the first is 100px wide, and the second has the minimum width of 50px and the maximum width of 200px)
+grid-template-columns: repeat(3, minmax(90px, 1fr));
+
+
+19.	auto-fill
+	This allows you to automatically insert as many rows or columns of your desired size as possible depending on the size of the container. You can create flexible layouts when combining auto-fill with minmax.
+repeat(auto-fill, minmax(60px, 1fr));
+(When the container changes size, this setup keeps inserting 60px columns and stretching them until it can insert another one)
+
+
+20.	auto-fit
+	collapses empty rows or columns and stretches items to fit the size of the container.
+repeat(auto-fit, minmax(60px, 1fr));
+
+
+21.	use media queries to rearrange grid areas, change dimensions of a grid, and rearrange the placement of items.
+@media (min-width: 400px){
+    .container{
+      grid-template-areas:
+        "header header"
+        "advert content"
+        "footer footer";
+    }
+}
+
+
+22. Turning an element into a grid only affects the behavior of its direct descendants. 
+	So by turning a direct descendant into a grid, you have a grid within a grid.
+.item3 {
+    background: PaleTurquoise;
+    grid-area: content;
+  display:grid;
+  grid-template-columns: auto 1fr;
+  }

@@ -1,0 +1,60 @@
+-----------
+---HTML5---
+-----------
+
+<h1></h1> :-  header tag, size decreases from <h1> till <h6>
+
+<p></p> :- paragraph tag
+
+<!--  code -->  :-  commenting in HTML5
+
+<img src="https://sample.com/pic.jpg" alt="This gives a picture"> :- image tage to display images
+
+<a href="https://sample.com> Sample website</a> - anchor tag to display links
+<a href="https://sample.com" target="_blank"> Sample website </a> - The link will open a blank page
+<a href="#abc"> abc </a> .....code.... <h1 id="abc">....</h1> - the link will direct you to the id tag location on site
+<a href="#"> abc </a> -  dead link
+
+Unordered List - bullet list
+<ul>
+	<l1>Cat</>
+	<li>Dog</li>
+</ul>
+
+Ordered List - numbered list
+<ul>
+	<l1>Cat</>
+	<li>Dog</li>
+</ul>
+
+
+<input type="text" placeholder="cat photo URL"> :- creates a input field, placeholder places a gray text inside the text box
+<input type="text" placeholder="cat photo URL" required> :- adding required makes it compulsory input
+
+A form in the HTML page with input and button 
+<form action="/submit-cat-photo">
+    <input type="text" placeholder="cat photo URL">
+    <button type="submit"> Submit </button>
+  </form> 
+
+A form that takes 'radio' button & 'checkbox'.
+'value' attribute holds the content that is to passed to the DB when sumitting a button.
+'checked' is used for setting a default value for submission
+<form action="/submit-cat-photo">
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="checkbox" name="indoor-outdoor" value="outdoor" > Outdoor</label><br>
+  </form>
+
+New learnings
+
+HTML5 introduces more descriptive HTML tags. These include main, header, footer, nav, video, article, section and others.
+These tags give a descriptive structure to your HTML, make your HTML easier to read, and help with Search Engine Optimization (SEO) and accessibility. The main HTML5 tag helps search engines and other developers find the main content of your page.
+
+example:
+<main> 
+  <h1>Hello World</h1>
+  <p>Hello Paragraph</p>
+</main>
+
+
+

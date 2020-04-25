@@ -1,0 +1,76 @@
+Applied Accessibility
+
+
+  1.  have well-organized code that uses appropriate markup
+  2.  ensure text alternatives exist for non-text and visual content
+  3.  create an easily-navigated page that's keyboard-friendly
+
+
+
+1. alt
+	using alt to display alternative text instead of image if the image fails to load
+<img src="doingKarateWow.jpeg" alt="Camper Cat is doing karate. ">
+
+
+2. <div> - groups content
+   <section> - groups related content
+   <article> - groups independent, self-contained content
+   
+3. <audio>
+<audio id="meowClip" controls>
+  <source src="audio/meow.mp3" type="audio/mpeg" />
+  <source src="audio/meow.ogg" type="audio/ogg" />
+</audio>
+
+4. <figure>
+  <img src="roundhouseDestruction.jpeg" alt="Photo of Camper Cat executing a roundhouse kick">
+  <br>
+  <figcaption>
+    Master Camper Cat demonstrates proper form of a roundhouse kick.
+  </figcaption>
+</figure>
+
+
+5.<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+</form>
+
+
+6.	<fieldset> & <legend>
+	when creating the form with buttons, use the <fieldset> tag to group the whole form
+	use the <legend> tag to write any descriptions instead of any other text tags within the form.
+<fieldset>
+        <legend>What level ninja are you?</legend>
+        <input id="newbie" type="radio" name="levels" value="newbie">
+        <label for="newbie">Newbie Kitten</label><br>
+        <input id="intermediate" type="radio" name="levels" value="intermediate">
+        <label for="intermediate">Developing Student</label><br>
+        <input id="master" type="radio" name="levels" value="master">
+        <label for="master">Master</label>
+</fieldset>
+
+/*previously here, the fieldset was div and legend was p*/
+
+
+7.	<input type="date" id="..." name="...">
+	date insert
+	
+	
+8.	<time datetime="2013-02-13">last Wednesday</time>
+
+9. Alway use the second way of linking in paragraphs
+	(1)	<p><a href="">Click here</a> for information about batteries</p>
+	(2)	<p>Click here for <a href="">information about batteries</a></p>
+	
+	
+10.	accesskey
+	This allows for a button to be accessed using keyboard.
+	accesskey attribute can be used in links, buttons, and form controls.
+<button accesskey="b">Important Button</button>
+
+
+11.	tabindex 
+	the tabindex attribute makes the tab keypress go through the elements in the sequence specified
+<input type="search" name="search" id="search" tabindex="1">
+<input type="submit" name="submit" value="Submit" id="submit" tabindex="2">

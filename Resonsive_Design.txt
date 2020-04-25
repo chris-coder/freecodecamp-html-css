@@ -1,0 +1,43 @@
+Responsive Web Design Principles
+
+1.	@media
+	change the presentation of content based on different viewport sizes
+<style>
+  p {
+    font-size: 20px;
+  }
+
+  @media (max-height: 800px) {
+    p{
+    font-size:10px;
+    }
+  }
+</style>
+
+
+2.	image adjustment based on screen size	
+{
+max-width:100%;
+height:auto;
+}
+
+
+3. how to not make the images appear pixelated in high res displays: 
+		define the height and width of the image as half of its original size
+img{
+height:200px;
+width:200px;
+}
+
+
+4.	viewport units (vw)
+	alternative to using the px or em units, Viewport units, like percentages, are relative units, but they are based off different items. Viewport units are relative to the viewport dimensions (width or height) of a device, and percentages are relative to the size of the parent container element.
+    vw (viewport width): 10vw would be 10% of the viewport's width.
+    vh (viewport height): 3vh would be 3% of the viewport's height.
+    vmin (viewport minimum): 70vmin would be 70% of the viewport's smaller dimension (height or width).
+    vmax (viewport maximum): 100vmax would be 100% of the viewport's bigger dimension (height or width).
+
+<style>
+h2{ width:80vw;}
+p{width:75vw;}
+</style>	

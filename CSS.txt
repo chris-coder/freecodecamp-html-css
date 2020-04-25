@@ -1,0 +1,159 @@
+-------
+--CSS--
+-------
+
+1. CSS is case-sensitive so be careful with your capitalizations
+ 
+ 
+2. Good to end inline style declarations with a ';' (just a practice!)
+
+
+3. inline CSS example
+<h2 style="color: red;">CatPhotoApp</h2>
+
+
+4.	style block example
+	a block can be placed anywhere, before or after the html tag
+<style>
+  h2 {
+    color: red; 
+  }
+</style>
+
+
+5.	using 'class' attribute in the block, we call the same style in multiple html tags
+	called using the .
+<h2 class="red-text">
+<p class="red-text">
+<style>
+  .red-text {
+    color: red;
+  }
+</style>
+
+
+6.	linking an external object(ex. font)
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+
+7.	multiple classes in html tags, serparate the classes by space
+<img class="class1 class2">
+
+
+8.	using 'id' attribute in the block, we call the is to give give styles to specific tags
+	the 'id' attribute is supposed to be unique as best practice
+	if you want to use 'id' for multiple tags, then better to put all the tags in a div and give the id to the div
+	called using the #
+<h2 id="red-text">
+<p id="red-text">
+<style>
+  #red-text {
+    color: red;
+  }
+</style>
+
+
+9.	using the [attr=value] selector to give a style to a bunch of attributes in the element
+[type='radio'] {
+  margin: 20px 0px 20px 0px;
+}
+
+
+10.	units that can be used in padding, margin, etc
+px = pixels
+mm = millimeter w.r.t. the screen
+in = inches w.r.t. the screen
+em or rem = relative to the size of the font
+
+
+
+
+
+--------------
+--Inheritnce--
+--------------
+
+11.	inner elements can inherit the CSS properties by default
+	but class, id, etc can over-ride the parent element properties
+body {
+  background-color: black;
+  font-family: monospace;
+  color: green;
+}
+
+
+12.	if two similar classes are listed in the class attribute, the latter defined class in the style/CSS will over-ride the first one
+	in below example, text will be in blue
+<style>
+  .pink-text {
+    color: pink;
+  }
+
+  .blue-text{
+    color: blue;
+  }
+</style>
+<h1 class="pink-text blue-text">Hello World!</h1>
+
+
+13.	id will take precedence over the class declarations
+<h1 class="pink-text blue-text" id="orange-text">Hello World!</h1>
+
+
+14.	Inline styles can over-ride both class and id
+<h1 id="orange-text" class="pink-text blue-text" style="color:green;">Hello World!</h1>
+
+
+15.	final over-ride: if you want to over-ride the over-rides then use !important
+ .pink-text {
+    color: pink !important;
+  }
+
+
+
+
+16.	colors can be specified as hex codes
+#FF00FF; 			(3 pairs of characters, 16 mil combo)
+#F0F;				(shortened version, 3 char for RBG)
+
+
+17.	colors can be specified as rgb values, decimal digits
+rgb(255, 165, 0);	/* (rgb values instead of hex) */
+
+
+18.	Variable declarations in CSS  (double hyphen is required)
+--abc-color:blue;
+
+
+19.	comments are written in regular lang style
+/* change code below */
+
+
+20.	Variables are called in CSS using var()
+background: var(--abc-color);
+
+
+21.	Fallback values 
+background: var(--abc-color, blue);
+
+.body-color{
+	background: blue;  /* incase the browser doesn't support variables */
+	background: var(--abc-color, blue);
+}
+
+
+
+
+--------------
+--Inheritnce--
+--------------
+22. making use of inheritance, the valiables can be declared in the the :root element
+	:root is a pseudo-class selector which matches with the root element of the HTML document
+	usually the variable declared can only be called in the parent class and called in the child classes
+	here the :root acts as the default global parent class, ideally it is good to declare in :root
+	Declaring the variable in an element over-rides :root declaration
+:root {
+    --penguin-belly:pink;
+  }
+
+

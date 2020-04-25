@@ -1,0 +1,91 @@
+CSS Flexbox
+
+1. 	display:flex;
+	Placing the CSS property display: flex; on an element allows you to use other flex properties to build a responsive page.
+	
+2.	flex-direction
+	sets the orientation of the flex box
+flex-direction: row;  				/*default value*/
+flex-direction: column;
+flex-direction: row-reverse;
+flex-direction: column-reverse;
+
+3.	justify-content
+	center: 	which aligns all the flex items to the center inside the flex container
+    flex-start: aligns items to the start of the flex container. For a row, this pushes the items to the left of the container. 
+				For a column, this pushes the items to the top of the container. 
+				This is the default alignment if no justify-content is specified.
+    flex-end: aligns items to the end of the flex container. For a row, this pushes the items to the right of the container. 
+			  For a column, this pushes the items to the bottom of the container.
+    space-between: aligns items to the center of the main axis, with extra space placed between the items. 
+					The first and last items are pushed to the very edge of the flex container. For example, in a row the first item is against the left side of the container, the last item is against the right side of the container, then the remaining space is distributed evenly among the other items.
+    space-around: similar to space-between but the first and last items are not locked to the edges of the container, 
+					the space is distributed around all the items with a half space on either end of the flex container.
+    space-evenly: Distributes space evenly between the flex items with a full space at either end of the flex container
+
+justify-content:center;
+
+
+3.	align-items
+		property to align flex items along the cross axis. (cross axis is horizontal for row, vertical for column)
+	flex-start: aligns items to the start of the flex container. 
+				For rows, this aligns items to the top of the container. For columns, this aligns items to the left of the container.
+    flex-end: aligns items to the end of the flex container. 
+			  For rows, this aligns items to the bottom of the container. For columns, this aligns items to the right of the container.
+    center: align items to the center. For rows, this vertically aligns items (equal space above and below the items). 
+			For columns, this horizontally aligns them (equal space to the left and right of the items).
+    stretch: stretch the items to fill the flex container. For example, rows items are stretched to fill the flex container top-to-bottom. 			This is the default value if no align-items value is specified.
+    baseline: align items to their baselines. Baseline is a text concept, think of it as the line that the letters sit on.
+	
+align-items:center;
+
+
+
+4.	flex-wrap
+		property tells CSS to wrap items. This means extra items move into a new row or column. 
+		The break point of where the wrapping happens depends on the size of the items and the size of the container.
+	nowrap: this is the default setting, and does not wrap items.
+    wrap: wraps items from left-to-right if they are in a row, or top-to-bottom if they are in a column.
+    wrap-reverse: wraps items from right-to-left if they are in a row, or bottom-to-top if they are in a column.
+
+flex-wrap:wrap;
+
+
+5.	flex-shrink
+	controls the size of the items when the container shrinks.
+	property takes numbers as values. The higher the number, the more it will shrink compared to the other items in the container.
+  p{flex-shrink:1;}
+  p{flex-shrink:2;}
+the flex with value 2 will be 2 times smaller than 1
+
+
+
+6.  flex-grow
+	controls the size of the items when the container grows.
+	property takes numbers as values. The higher the number, the more it will grow compared to the other items in the container.
+  p{flex-grow:1;}
+  p{flex-grow:2;}
+the flex with value 2 will be 2 times bigger than 1
+
+
+7.	flex-basis
+	 property specifies the initial size of the item before CSS makes adjustments with flex-shrink or flex-grow.
+	 units taken are like regular properties (px, em, %, etc.). 
+flex-basis:20em;
+
+
+8. flex: flex-grow value, flex-shrink value, flex-basis value
+	to set several flex properties at once.
+flex: 0 1 auto;		/*default value*/
+flex: 2 1 10px;
+
+
+9.	order 
+	property is used to tell CSS the order of how flex items appear in the flex container.
+	takes numbers as values;
+order :2;
+
+
+10.	align-self
+	accepts the same values as align-items, but will override align-items when both clash
+align-self: flex-end;

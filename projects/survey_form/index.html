@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <title>FCC: Survey form</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="title">Musclehead Gym Survey</h1>
+      <p id="description">We wanna know, 'Do you even lift bro?'</p>
+      <form action="/submit-gym-survey" id="survey-form">
+        <div class="form-set">
+          <label for="name" id="name-label">Name: </label>
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            placeholder="Enter your name"
+            pattern="[a-zA-Z\s\D]+"
+            required
+          />
+        </div>
+        <!-- name validation -->
+
+        <div class="form-set">
+          <label for="email" id="email-label">Email: </label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter your email address"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            required
+          />
+        </div>
+        <!-- email validation -->
+
+        <div class="form-set">
+          <label for="mob-number" id="mob-label">Mobile: </label>
+          <input
+            type="text"
+            id="mob-number"
+            class="form-control"
+            placeholder="Enter your mobile number"
+            maxlength="10"
+            required
+          />
+        </div>
+        <!-- number validation, size check -->
+
+        <div class="form-set">
+          <label for="number" id="number-label">Age:</label>
+          <input
+            type="number"
+            id="number"
+            class="form-control"
+            min="14"
+            max="99"
+            placeholder="Enter age"
+            required
+          />
+        </div>
+        <!-- number validation, min max range check -->
+
+        <div class="form-set">
+          <label for="h-number" id="height-label">Height (in cms):</label>
+          <input
+            type="number"
+            id="h-number"
+            class="form-control"
+            min="150"
+            max="250"
+            required
+          />
+        </div>
+        <!-- number validation, min max range check -->
+
+        <div class="form-set">
+          <label for="w-number" id="weight-label">Weight (in kgs):</label>
+          <input
+            type="number"
+            id="w-number"
+            class="form-control"
+            min="40"
+            max="150"
+            required
+          />
+        </div>
+        <!-- number validation, min max range check -->
+
+        <div class="form-set">
+          <label>Why should we let you in?</label>
+          <label for="dropdown"> Choose a reason: </label>
+          <select name="reason-list" id="dropdown">
+            <option value="skinny">I am skinny</option>
+            <option value="fat">I am fat</option>
+            <option value="fuckboi">I am a fuckboi</option>
+            <option value="virgin">I am virgin</option>
+          </select>
+        </div>
+
+        <div class="form-set">
+          <label>Do you even lift bro?</label>
+          <label for="yes">
+            <input
+              type="radio"
+              name="lift"
+              value="yes"
+              id="yes"
+              class="input-radio"
+            />
+            Ya bruh! All the time..
+          </label>
+
+          <label for="no">
+            <input
+              type="radio"
+              name="lift"
+              value="no"
+              id="yes"
+              class="input-radio"
+            />
+            Nobody ain't got time for that
+          </label>
+        </div>
+
+        <div class="form-set">
+          <label>What would you like to improve in yourself?</label>
+          <label for="arms">
+            <input
+              type="checkbox"
+              name="improve"
+              value="arms"
+              id="arms"
+              class="input-checkbox"
+            />
+            Arms
+          </label>
+          <label for="legs">
+            <input
+              type="checkbox"
+              name="improve"
+              value="legs"
+              id="legs"
+              class="input-checkbox"
+            />
+            Legs
+          </label>
+          <label for="back">
+            <input
+              type="checkbox"
+              name="improve"
+              value="back"
+              id="back"
+              class="input-checkbox"
+            />
+            Back
+          </label>
+          <label for="stamina">
+            <input
+              type="checkbox"
+              name="improve"
+              value="stamina"
+              id="stamina"
+              class="input-checkbox"
+            />
+            Stamina
+          </label>
+          <label for="strength">
+            <input
+              type="checkbox"
+              name="improve"
+              value="strength"
+              id="strength"
+              class="input-checkbox"
+            />
+            Strength
+          </label>
+          <label for="pickup">
+            <input
+              type="checkbox"
+              name="improve"
+              value="pickup"
+              id="pickup"
+              class="input-checkbox"
+            />
+            Picking up chicks!
+          </label>
+        </div>
+
+        <div class="form-set">
+          <label for="comments">Any comments or suggestion?</label>
+          <textarea
+            name="comments"
+            id="comments"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+
+        <div class="form-set">
+          <button type="submit" id="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
